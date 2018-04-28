@@ -1,0 +1,26 @@
+server:
+  port: 8700
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      uri: http://localhost:8000/
+
+  profiles:
+    active: dev
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: NUOCHONG-CONFIG-SERVER
+#      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
